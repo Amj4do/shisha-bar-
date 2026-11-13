@@ -237,6 +237,59 @@ function Experience() {
   );
 }
 
+function Menu() {
+  return (
+    <section className="menu-section section-pad" id="menu">
+      <div className="page-shell">
+        <SectionHeading
+          eyebrow="GETRÄNKE & SHISHA"
+          title={<>Unsere <em>Karte.</em></>}
+          text="Shisha-Sorten, Getränke, Mixgetränke und Cocktails – eine Auswahl aus der Stendal Lounge Bar."
+          align="center"
+        />
+        <div className="menu-grid">
+          {lounge.menu.map((category, index) => (
+            <article
+              className={`menu-card reveal${index === 0 ? " menu-card--featured" : ""}`}
+              key={category.id}
+            >
+              <div className="menu-card-media">
+                <img src={category.image} alt={category.imageAlt} loading="lazy" />
+                <span className="menu-card-scrim" aria-hidden="true" />
+                <div className="menu-card-overlay">
+                  <span className="menu-icon" aria-hidden="true">{category.icon}</span>
+                  <h3>{category.title}</h3>
+                  {category.price && <span className="menu-card-price">{category.price}</span>}
+                </div>
+              </div>
+              <div className="menu-card-body">
+                <ul className="menu-list">
+                  {category.items.map((item) => (
+                    <li key={item.name}>
+                      <span className="menu-item-top">
+                        <span className="menu-item-name">{item.name}</span>
+                        {item.price && <span className="menu-item-dots" aria-hidden="true" />}
+                        {item.price && <span className="menu-item-price">{item.price}</span>}
+                      </span>
+                      {item.description && (
+                        <span className="menu-item-desc">{item.description}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                {category.note && <p className="menu-note">{category.note}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="menu-disclaimer reveal">
+          Alle Preise inklusive der gesetzlichen Umsatzsteuer. Änderungen und Irrtümer vorbehalten.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Gallery() {
   const [activeImage, setActiveImage] = useState(null);
 
@@ -546,6 +599,7 @@ function Footer() {
           <small>ÜBERBLICK</small>
           <a href={`${siteBase}#about`}>Die Lounge</a>
           <a href={`${siteBase}#experience`}>Räume & Angebot</a>
+          <a href={`${siteBase}#menu`}>Menü</a>
           <a href={`${siteBase}#gallery`}>Galerie</a>
           <a href={`${siteBase}#reservation`}>Reservierung</a>
         </div>
@@ -594,6 +648,7 @@ function Home() {
       <Hero />
       <About />
       <Experience />
+      <Menu />
       <Gallery />
       <Reservation />
       <Location />
