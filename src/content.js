@@ -5,11 +5,17 @@ const menuImage = (file) => `${mediaUrl}${file}.jpg`;
 export const lounge = {
   name: "Stendal Lounge Bar",
   address: "Scharnhorststraße 80, 39576 Stendal, Germany",
-  phone: "+49 176 41233347",
-  phoneLink: "+4917641233347",
+  phone: "+49 162 9135461",
+  phoneLink: "+491629135461",
   plusCode: "JR3P+VP Stendal",
   hours: "Täglich 18:00–01:00 Uhr",
   hoursNote: "Am Wochenende gelegentlich länger geöffnet.",
+  delivery: {
+    label: "LIEFERSERVICE",
+    title: "Lieferung ab 19:00 Uhr",
+    text: "Bestellungen zur Lieferung nehmen wir täglich ab 19:00 Uhr bis zum Ladenschluss entgegen.",
+    note: "Bestellung telefonisch oder per WhatsApp.",
+  },
   video: `${mediaUrl}lounge-hero.mp4`,
   poster: `${mediaUrl}lounge-02.jpg`,
   navigation: [

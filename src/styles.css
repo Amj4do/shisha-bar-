@@ -418,6 +418,64 @@ textarea:focus-visible {
   padding-block: 118px;
 }
 
+.delivery-band {
+  position: relative;
+  border-top: 1px solid rgba(201, 164, 92, 0.28);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.28);
+  background:
+    radial-gradient(ellipse at 12% 50%, rgba(201, 164, 92, 0.15), transparent 46%),
+    linear-gradient(120deg, rgba(201, 164, 92, 0.09), rgba(17, 17, 15, 0) 58%),
+    var(--ink-soft);
+}
+
+.delivery-band-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 44px);
+  padding-block: 32px;
+}
+
+.delivery-icon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  border: 1px solid rgba(201, 164, 92, 0.5);
+  border-radius: 50%;
+  background: rgba(201, 164, 92, 0.1);
+  box-shadow: 0 0 34px rgba(201, 164, 92, 0.16);
+  font-size: 27px;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.delivery-copy h2 {
+  margin: 10px 0 0;
+  font-family: var(--display-font);
+  font-size: clamp(22px, 2.6vw, 31px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.delivery-text {
+  margin: 9px 0 0;
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.delivery-note {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.delivery-cta {
+  justify-self: end;
+  white-space: nowrap;
+}
+
 .about-section {
   position: relative;
   background:
@@ -1596,6 +1654,10 @@ textarea:focus-visible {
     font-size: clamp(22px, 4vw, 28px);
   }
 
+  .delivery-band-inner {
+    gap: 26px;
+  }
+
   .gallery-grid {
     gap: 11px;
   }
@@ -1821,6 +1883,23 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
     gap: 16px;
     margin-top: 40px;
+  }
+
+  .delivery-band-inner {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 18px;
+    padding-block: 26px;
+  }
+
+  .delivery-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 23px;
+  }
+
+  .delivery-cta {
+    grid-column: 1 / -1;
+    justify-self: stretch;
   }
 
   .menu-card--featured {

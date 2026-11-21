@@ -164,6 +164,26 @@ function Hero() {
   );
 }
 
+function DeliveryNotice() {
+  return (
+    <section className="delivery-band" aria-label="Lieferservice">
+      <div className="page-shell delivery-band-inner reveal">
+        <span className="delivery-icon" aria-hidden="true">🛵</span>
+        <div className="delivery-copy">
+          <p className="eyebrow"><span />{lounge.delivery.label}</p>
+          <h2>{lounge.delivery.title}</h2>
+          <p className="delivery-text">
+            {lounge.delivery.text} <span className="delivery-note">{lounge.delivery.note}</span>
+          </p>
+        </div>
+        <a className="button button--gold delivery-cta" href={phoneUrl}>
+          Jetzt bestellen <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section className="about-section section-pad" id="about">
@@ -548,7 +568,7 @@ function Location() {
             </div>
             <div className="contact-detail">
               <span className="detail-index">04</span>
-              <div><small>SERVICE</small><p>Verzehr vor Ort · kein Lieferservice</p></div>
+              <div><small>SERVICE</small><p>Verzehr vor Ort · Lieferung ab 19:00 Uhr</p></div>
             </div>
             <a className="button button--gold directions-button" href={directionsUrl} target="_blank" rel="noreferrer">
               Route planen <span aria-hidden="true">↗</span>
@@ -646,6 +666,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <DeliveryNotice />
       <About />
       <Experience />
       <Menu />
